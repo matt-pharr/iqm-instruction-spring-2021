@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[a4paper,total={6.5in,8.5in}]{geometry}
+\usepackage{physics}
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Name:\ \underline{\hspace{6cm}}}
+\lhead{Math quiz 0}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\begin{enumerate}
+    \item $a$, $b$ and $\epsilon$ are real numbers and $\epsilon \ll 1$.  Evaluate $e^{i\epsilon a} b e^{-i\epsilon a}$ to first order in $\epsilon$. (hint: start by Taylor expanding $f(a) = e^{i\epsilon a}$ to first order)
+    \vspace{8cm}
+    \item $A$ and $B$ are $n\times n$ matrices and $\epsilon\ll 1$ is a real number.  Evaluate $e^{i\epsilon A} B e^{-i\epsilon A}$ to first order in $\epsilon$. (hint: your answer should be written in terms of the commutator $[A,B]$)
+    \newpage
+    \item Consider the matrix
+    \begin{equation}
+        A = \mqty(0&-i\\i&0).
+    \end{equation}
+    %
+    \begin{enumerate}
+        \item Is $A$ Hermitian?  Explain your answer.
+        \vspace{2cm}
+        \item\label{it:eig} Find the eigenvalues and \textit{normalized} eigenvectors of $A$.
+        \vspace{6cm}
+        \item Construct a unitary matrix $U$ whose columns are the normalized eigenvectors of $A$, and show by explicit matrix multiplication that $U$ is unitary.
+        \vspace{4cm}
+        \item Show by explicit matrix multiplication that some product involving $A$ and $U$ produces a diagonal matrix. (hint: the diagonal elements should be the eigenvalues from part (\ref{it:eig}))
+    \end{enumerate}
+\end{enumerate}
+\end{document}
+% \usepackage{pgfplots}
+% \usepackage{tikz}

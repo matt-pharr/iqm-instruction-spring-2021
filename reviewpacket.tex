@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[a4paper,total={6.5in,8.5in}]{geometry}
+\usepackage{physics}
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Name:\ \underline{\hspace{6cm}}}
+\lhead{Math review}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\begin{enumerate}
+  \item Normalize the following vectors
+   $(i=\sqrt{-1})$.
+    \begin{enumerate}[label=i.]
+      \item $\vb{v}=3\hat{\vb{x}}-4\hat{\vb{z}}$\hspace{5cm}
+      ii. $\vb{w}=-2\hat{\vb{x}}+i\hat{\vb{y}}+\sqrt{3}\hat{\vb{z}}$
+    \end{enumerate}
+  \vspace{3.5cm}
+  \item Calculate the matrix-matrix and matrix-vector products shown below.
+    \begin{enumerate}[label=i.]
+      \item \( \displaystyle \mqty(1 & 2 \\ -2 & 1)\mqty(3 & 4\\3 & 2) \)\hspace{3cm} ii.\ \( \displaystyle \mqty(1 & 2 & 1\\2 & 0 & 2\\4 & 2 & 1)\mqty(2 \\ 1 \\ 1) \)
+    \end{enumerate}
+  \vspace{3.5cm}
+  \item Invert the following matrices.  If a matrix has no inverse, explain why.
+    \begin{enumerate}[label=i.]
+      \item $A = \mqty(1 & 2 \\ -2 & 1)$
+      \hspace{4cm}
+      ii. $B = \mqty(3 & 4\\6 & 8)$
+    \end{enumerate}
+  \vspace{3.5cm}
+  \item Solve the following matrix equations.  If an equation has no solution, explain why.
+      \begin{enumerate}[label=i.]
+          \item
+          \( \displaystyle \mqty(3&5\\4&1)\mqty(x\\y)=\mqty(-4\\-11) \)
+          \hspace{3cm}
+          ii.
+          \ \( \displaystyle \mqty(1 & -2 \\ -4 & 8)\mqty(x \\ y)=\mqty(4 \\ 5) \)
+      \end{enumerate}
+  \vspace{3.5cm}
+%   \item In words, what is a vector space?
+%   \vspace{1cm}
+%   \item What does it mean to say that a vector space is ``closed'' under addition and scalar multiplication? Can you express these ideas mathematically?
+%   \vspace{2cm}
+%   \item a) What are the three main ways in which you can multiply vectors from different spaces (e.g. column vectors (primer space) and row vectors (dual space))? b) What kinds of objects do these three kinds of multiplication give you?
+  \item Calculate the inner ($\vb{u}\vdot\vb{v}$) and cross ($\vb{u}\cross\vb{v}$) products of the following pairs of vectors.
+  \begin{enumerate}[label=i.]
+    \item \( \displaystyle \vb{a}=\mqty(2\\2\\1)\ ,\ \vb{b}=\mqty(2\\-1\\-2) \)\hspace{3cm} ii.\ \( \displaystyle \vb{u}=\frac{1}{\sqrt{2}}\mqty(1\\i\\0)\ ,\ \vb{v}=\frac{1}{\sqrt{2}}\mqty(1\\i\\0) \)
+  \end{enumerate}
+  \vspace{6cm}
+  \item Calculate the eigenvalues and eigenvectors for the following matrices.
+  \begin{enumerate}[label=i.]
+    \item $A = \mqty(1&0\\0&-1)$
+    \hspace{5cm}
+    ii. $B = \mqty(1&i\\-i&1)$
+  \end{enumerate}
+  \vspace{6cm}
+  \item What can you say about the eigenvalues and eigenvectors of a Hermitian matrix?
+  \vspace{2cm}
+  \item If a matrix is unitary, what equation does it satisfy?
+  \vspace{2cm}
+  \item Determine whether or not these sets of vectors form a basis (hint: there are two requirements).
+  \begin{enumerate}[label=i.]
+    \item \( \displaystyle V = \left\{\mqty(1\\-1\\1),\mqty(0\\1\\2),\mqty(3\\0\\-1)\right\} \)
+    \hspace{2cm}
+    ii.\ \( \displaystyle U=\left\{\mqty(1\\-1\\1),\mqty(-1\\2\\-2),\mqty(-1\\4\\-4)\right\}\)
+  \end{enumerate}
+  \vspace{5cm}
+  \item For the two bases shown below\\
+    \begin{equation*}
+      B=\left\{\mqty(1\\0),\mqty(0\\1)\right\}\quad,\quad B^\prime =\left\{\mqty(1\\2),\mqty(2\\1)\right\}
+    \end{equation*}
+    determine the transition matrices to go from
+    \begin{enumerate}[label=i]
+      \item $B^\prime$ to $B$\hspace{5cm} ii. $B$ to $B^\prime$
+    \end{enumerate}
+    \vspace{5cm}
+  \item Using the results of the previous problem, find the representations of the following vectors (initially expressed in basis $B$) in basis $B'$.
+  \begin{enumerate}[label=i]
+    \item \( \displaystyle \vb{v}=\mqty(3\\-3)_{B} \) \hspace{5cm} ii.\ \( \displaystyle \vb{v}=\mqty(-2\\0)_B \)
+  \end{enumerate}
+  \vspace{5cm}
+  \item Find the representation of the matrix
+  $A=\mqty(3&-2\\2&-2)_B$ in the basis $B^\prime$.
+  \vspace{5cm}
+    \item Give the first four Taylor series terms for the following functions. For each function, expand about whatever value of $x$ you see fit.
+        \begin{enumerate}[label=i.]
+                \item $f(x) = \sin(x)$ \hspace{2cm}
+                ii. $g(x) = e^x$
+                \hspace{2cm} 
+                iii. $h(x) = (1 + x)^n$ for non-integer $n$
+            \vspace{5cm}
+        \end{enumerate}
+    \item Find the Fourier transform of the function
+    $f(x) = \sin(x) + 2\cos(3x)$.
+\end{enumerate}
+\end{document}
+% \usepackage{pgfplots}
+% \usepackage{tikz}

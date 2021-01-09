@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[a4paper,total={6.5in,8.5in}]{geometry}
+% \usepackage[a4paper,total={6.5in,9in}]{geometry}
+\usepackage{physics}
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Name:\ \underline{\hspace{6cm}}}
+\lhead{Math activity 2: matrix mechanics}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\noindent *In this worksheet, assume all vectors are normalized, i.e., $\mathbf{v}^\dagger\mathbf{v} = 1$
+\section{Hermitian and unitary matrices}
+  \begin{enumerate}[label=(\alph*)]
+      \item Show that the eigenvalues of a Hermitian matrix are real.
+      \vspace{3cm}
+      \item Using the fact that the eigenvalues of a Hermitian matrix $H$ are real, show that if the eigenvalues are nondegenerate, the corresponding eigenvectors are orthogonal, i.e., show that
+      \begin{equation}
+      \mathbf{v}^\dagger_m\mathbf{v}_n = \delta_{mn}
+      \qquad\text{if}\qquad
+      H\mathbf{v}_n = \epsilon_n\mathbf{v}_n,
+      \text{  and  }
+      \epsilon_m \neq\epsilon_n
+      \text{  for  }
+      m\neq n
+      \end{equation}
+      \vspace{4cm}
+      %
+      where we are assuming that each $\mathbf{v}_n$ is normalized.
+      \item Let $U$ be a square matrix whose columns are the normalized eigenvectors of a Hermitian matrix, and let $I$ be the identity matrix so that
+      \begin{equation}
+          I_{mn} = \delta_{mn}
+          \qquad\text{and}\qquad
+          I\mathbf{v} = \mathbf{v}
+      \end{equation}
+      %
+      for any vector $\mathbf{v}$. Show that
+      \begin{equation}
+          \label{eq:unitary}
+          U^\dagger U = UU^\dagger = I.
+      \end{equation}
+      \vspace{2cm}
+      %
+      Note: by definition, all unitary operators obey equation \ref{eq:unitary}!
+  \end{enumerate}
+\newpage
+\section{Functions of matrices}
+  \begin{enumerate}[label=(\alph*)]
+      \item\label{it:D} Consider the diagonal matrix
+      \begin{equation}
+      D = \mqty(a&0\\0&b),
+      \end{equation}
+      %
+      where $a$ and $b$ are real numbers.  What is $D^n$?
+      \vspace{1.5cm}
+      \item What is $f(D)$ in terms of $f(a)$ and $f(b)$?
+      \vspace{2cm}
+      \item Consider a 2$\times$2 Hermitian matrix $A$ with eigenvalues $a_1$ and $a_2$. Let $U$ be a $2\times2$ matrix whose columns are the normalized eigenvectors of $A$.  Show that the diagonal matrix
+      \begin{equation}
+      D = \mqty(a_1&0\\0&a_2),
+      \end{equation}
+      %
+      can be written as some product involving $A$ and $U$.
+      \vspace{2cm}
+      \item Use equation \ref{eq:unitary} to write is $A$ in terms of $D$ and $U$.
+      \vspace{2cm}
+      \item What is $A^n$ in terms of $D$ and $U$? Use equation \ref{eq:unitary} to simplify the expression as much as possible.
+      \vspace{2cm}
+      \item\label{it:f(A)} Show that the function $f(A)$ can be written as
+      \begin{equation}
+      f(A)
+      = U
+      \mqty(f(a_1) &0\\0 &f(a_2))
+      U^\dagger
+      \end{equation}
+      \vspace{2.5cm}
+    \end{enumerate}
+\newpage
+\section{Application}
+\noindent
+The goal of this section is to find the matrix representation of the operator
+$\hat{R}(\theta, \vb{n}) = e^{-i\theta\hat{\vb{J}}\cdot\vb{n}/\hbar}$, which rotates an arbitrary spin-1/2 state by an angle $\theta$ about an axis $\vb{n} = (n_x, n_y, n_z)$, letting $|\vb{n}|^2 = 1$.  Here, the components of $\hat{\vb{J}} = (\hat{J}_x, \hat{J}_y, \hat{J}_z)$ are the total angular momentum operators in the $x$, $y$, and $z$ directions. Their matrix representations in the $\ket{\pm z}$ basis are given in the text as
+\begin{equation}
+J_x = \frac{\hbar}{2}\mqty(0&1\\1&0),
+\hspace{3cm}
+J_y = \frac{\hbar}{2}\mqty(0&-i\\i&0),
+\hspace{3cm}
+J_z = \frac{\hbar}{2}\mqty(1&0\\0&-1).
+\end{equation}
+%
+    \begin{enumerate}[label=(\alph*)]
+      \item We will now apply the methods we worked out in parts 2\ref{it:D}-2\ref{it:f(A)}.  Write the $2\times2$ matrix representation of the operator $\hat{\vb{J}}\cdot\vb{n}$ in the $\ket{\pm z}$ basis in terms of $n_x$, $n_y$, and $n_z$. We'll call this matrix $\vb{J}\cdot\vb{n}$ (removing the ``hat'').
+      \vspace{2.5cm}
+      \item Find the eigenvalues and normalized eigenvectors of $\vb{J}\cdot\vb{n}$.
+      \vspace{2.5cm}
+      \item Write $\vb{J}\cdot\vb{n}$ as the product of a diagonal matrix and two unitary matrices.
+      \vspace{2.5cm}
+      \item Write $R(\theta, \vb{n}) = e^{-i\theta\vb{J}\cdot\vb{n}/\hbar}$, the matrix repesentation of $\hat{R}(\theta, \vb{n})$, as the product of a diagonal matrix and two unitary matrices.
+      \vspace{2.5cm}
+      \item Carry out the matrix product you arrived at in the previous question. Show that the resulting matrix can be written as
+      \begin{equation}
+      R(\theta,\vb{n})
+      =
+      I\cos\left(\frac{\theta}{2}\right)
+      -
+      \frac{2i}{\hbar}(\vb{J}\cdot\vb{n})\sin\left(\frac{\theta}{2}\right),
+      \end{equation}
+      %
+      where $I$ is the identity matrix.
+      \vspace{2.5cm}
+    \end{enumerate}
+\newpage
+\section{Reflection}
+    \begin{enumerate}[label=(\alph*)]
+      \item Check that the matrix $R(\theta,\vb{n})$ correctly rotates the $\ket{+z}$ state into $\ket{-z}$, $\ket{+x}$, and $\ket{-x}$.
+      \vspace{6cm}
+      \item In a bulleted list, summarize all of the important steps that allowed us to write the matrix representation of the function of an operator.
+  \end{enumerate}
+\end{document}
