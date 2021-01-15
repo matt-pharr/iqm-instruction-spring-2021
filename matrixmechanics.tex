@@ -64,7 +64,8 @@
       D = \mqty(a_1&0\\0&a_2),
       \end{equation}
       %
-      can be written as some product involving $A$ and $U$.
+      can be written as some product 
+      $A$ and $U$.
       \vspace{2cm}
       \item Use equation \ref{eq:unitary} to write is $A$ in terms of $D$ and $U$.
       \vspace{2cm}
@@ -119,5 +120,31 @@ J_z = \frac{\hbar}{2}\mqty(1&0\\0&-1).
       \item Check that the matrix $R(\theta,\vb{n})$ correctly rotates the $\ket{+z}$ state into $\ket{-z}$, $\ket{+x}$, and $\ket{-x}$.
       \vspace{6cm}
       \item In a bulleted list, summarize all of the important steps that allowed us to write the matrix representation of the function of an operator.
+  \end{enumerate}
+    \newpage
+ \section{Outer Products}
+    
+    \noindent
+      Since $\ket{+z}$ and $\ket{-z}$ form a complete basis, any matrix can be formed out of a linear combination of direct products of the basis bras and kets.\newline
+      
+      Recall $\ket{+z}$ and $\ket{-z}$ may be represented in the $S_{z}$ basis as 
+$\left(\begin{array}{c}1 & 0 \end{array}\right)$, and $ \left(\begin{array}{c}0 & 1 \end{array}\right)$ respectively.  It can also be seen that the outer product $\ket{+z}\bra{+z}$ may be represented as 
+\begin{equation}
+\left(\begin{array}{c}1 & 0 \end{array}\right)\left(\begin{array}{cccc}1 & 0  \end{array}\right) = \left(\begin{array}{cccc}1 & 0  \\ 0 & 0 \end{array}\right)
+\end{equation}
+
+and the outer product $\ket{+z}\bra{-z}$ may be represented as 
+
+\begin{equation}
+\left(\begin{array}{c}1 & 0 \end{array}\right)\left(\begin{array}{cccc}0 & 1  \end{array}\right) = \left(\begin{array}{cccc}0 & 1  \\ 0 & 0 \end{array}\right)
+\end{equation}
+
+
+      \begin{enumerate}[label=(\alph*)]
+      \item Using outer products, find a way to form the Identity matrix out of outer products of the $\ket{+z}$ and $\ket{-z}$ bras and kets in the $S_{z}$ basis.
+      \vspace{4cm}
+      \item Similarly, form the Pauli matrix $\sigma_{z}.$
+      \vspace{2cm}
+      \item If you are up for a little challenge, form the Pauli $\sigma_{y}$, and $\sigma_{x}$ matrices out of a linear combination of outer products of $\ket{+z}$ and $\ket{-z}$ bras and kets in the $S_{z}$ basis.
   \end{enumerate}
 \end{document}
