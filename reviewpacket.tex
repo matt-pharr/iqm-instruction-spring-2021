@@ -3,6 +3,7 @@
 \usepackage{bm}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
+\usepackage[table]{xcolor}
 \usepackage[a4paper,total={6.5in,8.5in}]{geometry}
 \usepackage{physics}
 \begin{document}
@@ -97,6 +98,151 @@
     \item Find the Fourier transform of the function
     $f(x) = \sin(x) + 2\cos(3x)$.
 \end{enumerate}
+
+\newpage
+
+We will now go over how to take the determinant of $4\times 4$ and $n\times n$ matricies. This process can be broken down into steps. Let us do this with the following matrix:
+
+\begin{equation}
+  A = \left(\begin{array}{cccc}
+    5  & -7  & 2 & 2 \\
+    0   & 3  & 0 & -4 \\
+    -5   & -8 & 0 & 3 \\
+    0   & 5   & 0  & -6 \\
+  \end{array}\right)
+\end{equation}
+
+\begin{enumerate}
+  \item Pick a row or column. It does not matter which row or column we pick, the determinant will be unique regardless of this. We can pick such a row or column strategically, as we will see. Let us select the highlighted column. \begin{equation}
+    \left(\begin{array}{c>{\columncolor{yellow!20}}ccc}
+      5  & -7  & 2 & 2 \\
+      1   & 3  & 0 & -4 \\
+      -5   & -8 & 0 & 3 \\
+      1   & 5   & 0  & -6 \\
+    \end{array}\right)
+  \end{equation}
+  \item Find the sub-matricies and their determinants. For each component in the highlighted column, we cover up its row and column to find a 3$\times$3 matrix. For example, we do this with the top component $-7$: \begin{equation}
+    \left(\begin{array}{c>{\columncolor{yellow!20}}ccc}
+      \rowcolor{yellow!20}
+      5  & -7  & 2 & 2 \\
+      1   & 3  & 0 & -4 \\
+      -5   & -8 & 0 & 3 \\
+      1   & 5   & 0  & -6 \\
+    \end{array}\right) 
+  \end{equation} Omitting these values, we find the $3\times 3$ matrix \begin{equation} \left(\begin{array}{ccc}
+    1   & 0 & -4 \\
+    -5  & 0 & 3 \\
+    1   & 0  & -6 \\
+  \end{array}\right) \end{equation} Its determinant is \begin{equation} \left|\begin{array}{ccc}
+    1   & 0 & -4 \\
+    -5  & 0 & 3 \\
+    1   & 0  & -6 \\
+  \end{array}\right| = 0 \end{equation}
+
+  Following with the other components, we go down the column and get the matricies \begin{equation}
+    \left(\begin{array}{c>{\columncolor{yellow!20}}ccc}
+      5  & -7  & 2 & 2 \\
+      \rowcolor{yellow!20}
+      1   & 3  & 0 & -4 \\
+      -5   & -8 & 0 & 3 \\
+      1   & 5   & 0  & -6 \\
+    \end{array}\right) \rightarrow \left|\begin{array}{ccc}
+      5   & 2 & 2 \\
+      -5  & 0 & 3 \\
+      1   & 0  & -6 \\
+    \end{array}\right| = -54
+  \end{equation}
+  \begin{equation}
+    \left(\begin{array}{c>{\columncolor{yellow!20}}ccc}
+      5  & -7  & 2 & 2 \\
+      1   & 3  & 0 & -4 \\
+      \rowcolor{yellow!20}
+      -5   & -8 & 0 & 3 \\
+      1   & 5   & 0  & -6 \\
+    \end{array}\right) \rightarrow \left|\begin{array}{ccc}
+      5   & 2 & 2 \\
+      1  & 0 & -4 \\
+      1   & 0  & -6 \\
+    \end{array}\right| = 4
+  \end{equation}
+  \begin{equation}
+    \left(\begin{array}{c>{\columncolor{yellow!20}}ccc}
+      5  & -7  & 2 & 2 \\
+      1   & 3  & 0 & -4 \\
+      -5   & -8 & 0 & 3 \\
+      \rowcolor{yellow!20}
+      1   & 5   & 0  & -6 \\
+    \end{array}\right) \rightarrow \left|\begin{array}{ccc}
+      5   & 2 & 2 \\
+      1  & 0 & -4 \\
+      -5  & 0 & 3 \\
+    \end{array}\right| = 34
+  \end{equation}
+\item Now we find what is known as the 'cofactor' for each of our components. This is simply equal to $C_{i,j} = (-1)^{i+j}$ where $i$ and $j$ are the position of the component in the matrix. For example, for $-7$, the cofactor would be $C_{1,2} = (-1)^{1+2} = -1$.
+\item We combine all of these in a sum: \begin{equation}
+  \left|\begin{array}{c>{\columncolor{yellow!20}}ccc}
+    5  & -7  & 2 & 2 \\
+    1   & 3  & 0 & -4 \\
+    -5   & -8 & 0 & 3 \\
+    1   & 5   & 0  & -6 \\
+  \end{array}\right| = (-1)^{1+2}(0)(-7) + (-1)^{2+2}(-54)(3) + (-1)^{3+2}(4)(-8) + (-1)^{4+2}(34)(5)
+\end{equation}
+Simplifying, 
+\begin{equation}
+  \text{det}(A) = -1(0)(-7) + 1(-54)(3) + -1(4)(-8) + 1(34)(5) = 40
+\end{equation}
+
+\end{enumerate}
+
+Thus we have our determinant. One may have noticed, that this problem would be easier if we selected column number three:
+
+\begin{equation}
+  \left|\begin{array}{cc>{\columncolor{yellow!20}}cc}
+    5  & -7  & 2 & 2 \\
+    1   & 3  & 0 & -4 \\
+    -5   & -8 & 0 & 3 \\
+    1   & 5   & 0  & -6 \\
+  \end{array}\right|
+\end{equation}
+
+Try this on your own. 
+
+\vspace{5cm}
+
+Additional Problems:
+
+\begin{enumerate}
+  \item Find the determinants:
+  \begin{enumerate}[label=i]
+    \item \( \displaystyle A= \left(\begin{array}{cc>{\columncolor{yellow!20}}cc}
+      5  & -7  & 2 & 2 \\
+      1   & 3  & 0 & -4 \\
+      -5   & -8 & 0 & 3 \\
+      1   & 5   & 0  & -6 \\
+    \end{array} \right) \) \hspace{5cm} ii.\ \( \displaystyle B= \left(\begin{array}{cccc}
+      0  & \frac{\sqrt{3}}{2}  & 0 & 0 \\
+      \frac{\sqrt{3}}{2}   & 0  & 1 & 0 \\
+      0   & 1 & 0 & \frac{\sqrt{3}}{2} \\
+      0   & 0   & \frac{\sqrt{3}}{2}  & 0 \\
+    \end{array} \right) \)
+  \end{enumerate}
+  \newpage
+  \item Find all eigenvalues (not eigenvectors!) of the following matricies:
+  \begin{enumerate}[label=i]
+    \item \( \displaystyle C= \left(\begin{array}{cccc}
+      3/2&0&0&0\\
+      0&1/2&0&0\\
+      0&0&-1/2&0\\
+      0&0&0&-3/2\\
+    \end{array} \right) \) \hspace{5cm} ii.\ \( \displaystyle D= -i\left(\begin{array}{cccc}
+      0  & \frac{\sqrt{3}}{2}  & 0 & 0 \\
+      -\frac{\sqrt{3}}{2}   & 0  & 1 & 0 \\
+      0   & -1 & 0 & \frac{\sqrt{3}}{2} \\
+      0   & 0   & -\frac{\sqrt{3}}{2}  & 0 \\
+    \end{array} \right) \)
+  \end{enumerate}
+\end{enumerate}
+
 \end{document}
 % \usepackage{pgfplots}
 % \usepackage{tikz}
